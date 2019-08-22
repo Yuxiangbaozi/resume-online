@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./resume.css">
+  <script>
+      const WIDTH = 755 //不加px
+      const mobileAdapter = ()=> {
+        let scale = screen.width/WIDTH
+        let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
+        let meta = document.querySelector('meta[name=viewport]')
+        if(!meta){
+          meta = document.createElement('meta')
+          meta.setAttribute('name','viewport')
+          document.head.appendChild(meta)
+        }
+        meta.setAttribute('content', content)
+
+        let style = document.querySelector('link[rel="stylesheet"]')
+        let content2 = "./resume-phone.css"
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){//设备检测
+          style.setAttribute('href', content2)
+        }
+      }
+      mobileAdapter() //执行函数
+      window.onorientationchange = mobileAdapter //旋转屏幕重新校正
+  </script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人在线简历</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="aside">
+      <div class="usericon">
+        <h2><img src="./image/qq.png"></h2>
+      </div>
+      <div class="user">
+        <h3>个人资料</h3>
+        <ul>
+          <li><div>学历：大专</div></li>
+          <li><div>age：30</div></li>
+          <li><div>就职城市：广州</div></li>
+          <li><div>1年前端经验</div></li>
+        </ul>
+      </div>
+      <div class="phone">
+        <h3>联系方式</h3>
+        <ul>
+          <li><div><img src="./image/qq.png"></div><span>1483115952</span></li>
+          <li><div><img src="./image/wx.png"></div>13422011279</li>
+          <li><div><img src="./image/phone.png"></div>13422011279</li>
+          <li><div><img src="./image/github.png"></div><a href="https://github.com/Yuxiangbaozi" target="_blank">Yuxiangbaozi</a></li>
+          <li><div><img src="./image/E-mail.png"></div>a528874acd5@qq.com</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>技能介绍</h3>
+        <dl>
+          <dt><div><i>HTML/CSS</i></div></dt>
+          <dd><span class="mastery" style="width: 90%"></span></dd>
+          <dt><div><i>JavaScript/ES6/jQuery</i></div></dt>
+          <dd><span class="mastery" style="width: 85%"></span></dd>
+          <dt><div><i>Node.js</i></div></dt>
+          <dd><span class="mastery" style="width: 55%"></span></dd>
+          <dt><div><i>Webpack/Parcel</i></div></dt>
+          <dd><span class="mastery" style="width: 65%"></span></dd>
+          <dt><div><i>Vue/Vuex/Vue-router</i></div></dt>
+          <dd><span class="mastery" style="width: 80%"></span></dd>
+          <dt><div><i>SVG/Scss/Babel</i></div></dt>
+          <dd><span class="mastery" style="width: 75%"></span></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="main">
+      <div class="name">
+        <div><div><b>李</b></div><div><b>仲</b></div><div><b>谦</b></div></div>
+        <span><span><b>前</b></span><span><b>端</b></span><span><b>工</b></span><span><b>程</b></span><span><b>师</b></span></span>
+      </div>
+      <div class="introduce">
+        <p><i>1年前端开发经验，熟悉<b>Vue</b>技术栈，熟练模块化，工程化开发流程，</i></p>
+        <p><i>掌握<b>Webpack</b>配置，熟练使用<b>ES6</b>写代码，有小程序、移动端开发经验。</i></p>
+      </div>
+      <div class="history">
+        <h2>履历</h2>
+        <span class="line"></span>
+        <dl>
+          <dt>2008.09 -- 2011.07</dt>
+          <dd>广东食品药品职业学院</dd>
+          <dt>2012.11 -- 至今</dt>
+          <dd>天河客运站：任职天河客运站快件中心，负责日常维护客户资料数据，货物出入仓数据管理。</dd>
+        </dl>
+      </div>
+      <div class="project">
+        <h2>个人项目经验</h2>
+        <span class="line"></span>
+        <div>
+          <img src="./image/p1.png">
+          <div>
+              <span><b>便携画板(Mobile adaptation)</b></span>
+              <p>该项目以<b>原生JS</b>框架搭建，搭载了<b>移动端适配</b>技术，同时支持手机端和电脑端。</p>
+              <p>技术栈：<b>原生JS,ES6,移动端</b></p>
+              <span class="preview"><a href="https://yuxiangbaozi.github.io/canvas/index.html">预览</a>&nbsp&nbsp&nbsp<a href="https://github.com/Yuxiangbaozi/canvas">Code</a></span>
+          </div>
+        </div>
+        <div>
+            <img src="./image/p2.jpg">
+            <div>
+                <span><b>仿生Cnode社区搭建</b></span>
+                <p>该项目是利用<b>Vue-cil</b>脚手架搭建的一个多人在线社区平台，项目共分为<b>八大组件</b>，其中涉及的大量的<b>内置指令</b>和<b>自定义事件</b><b>绑定</b>和<b>触发</b>，使用<b>单向数据流</b>传递数据，并利用watch监听vue-router的跳转。</p>
+                <p>技术栈：<b>Vue,Vuex,Vue-router,ES6,Parcel</b></p>
+                <span class="preview"><a href="https://yuxiangbaozi.github.io/cnode/dist/index.html">预览</a>&nbsp&nbsp&nbsp<a href="https://github.com/Yuxiangbaozi/cnode">Code</a></span>
+            </div>
+          </div>
+          <div>
+              <img src="./image/p3.png">
+              <div>
+                  <span><b>造轮子：UIFrame</b></span>
+                  <p>该项目是<b>Vue</b>框架搭建的大型造轮子项目中的一环，它的目的主要是为其他项目提供技术支持。在我负责的<b>八大组件</b>开发中，考虑到兄弟组件之间，父子组件之间之间通讯的复杂性，我<b>摒弃</b>了Vue常用的<b>双向绑定</b>和<b>单向数据流</b>模式，首创使用了<b>发布-订阅</b>的开发模式，通过注入eventBus来传递各组件的数据，大大提高代码的易读性和维护性</p>
+                  <p>技术栈：<b>Vue,Vuex,Vue-router,eventBus,ES6,Parcel</b></p>
+                  <span class="preview"><a href="https://yuxiangbaozi.github.io/UIframe/">预览</a>&nbsp&nbsp&nbsp<a href="https://github.com/Yuxiangbaozi/UIframe">Code</a></span>
+              </div>
+            </div>
+            <div>
+                <img src="./image/miniclock.jpg">
+                <div>
+                    <span><b>微信小程序：miniclock</b></span>
+                    <p>该项目是<b>微信开发</b>的一个小工具，我在开发期间，对主要的功能进行<b>分类抽离</b>并<b>封装成组件</b>，并通过首页数据接入api，实现一键登录功能。</p>
+                    <p>技术栈：<b>微信web开发,JS,ES6,移动端</b></p>
+                    <span class="preview" style="color: crimson"><<--扫描二维码立刻查看&nbsp&nbsp&nbsp<a href="https://github.com/Yuxiangbaozi/miniclock">Code</a></span>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./resume.js"></script>
+</html>
